@@ -5,49 +5,44 @@ Objective: Create a webservice which can shorten urls like TinyURL and bit.ly
 
 1. Clone this repository by running
 
-$ https://github.com/Daphnie-Lias/UrlShorten.git
+   $ https://github.com/Daphnie-Lias/UrlShorten.git
 
 2. Install python from https://python.org or via your favorite package manager (homebrew for MAC)
-   brew install python
-  
-   Verify python version: 
-   >python3 -V 
-   >Python 3.7.6
+   
+      brew install python
+
+      Verify python version: 
+      >python3 -V 
+      >Python 3.7.6
 
 
-2. Install Pipenv Globally
-Open Terminal in (Applications/Utilities/Terminal) and upgrade pip:
+3. Install Pipenv Globally
 
-python3.7.6 -m pip install pip --upgrade
-Another option to upgade, is pip3 install pip --upgrade
+      python3.7.6 -m pip install pipenv
 
-Install Pipenv:
+4. Create Virtual Environment with Pipenv
+      Open Terminal in (Applications/Utilities/Terminal)
 
-python3.7.6 -m pip install pipenv
+      Make directory :mkdir urlproj
 
-3. Create Virtual Environment with Pipenv
-Open Terminal in (Applications/Utilities/Terminal)
+      Activate the Virtual Environment:
 
-Make directory :mkdir urlproj
+      pipenv shell
 
-Activate the Virtual Environment:
-
-pipenv shell
- 
-$ pip install -r requirements.txt
+      $ pip install -r requirements.txt
 
 4. DB Setup:
- If tables are not created on startup , use the below commands: (one time) 
+    If tables are not created on startup , use the below commands: (one time) 
 
-$ On Terminal-> python
-$ > from url_shorten import create_app
->from url_shorten.extensions import db
->from url_shorten.models import Url
-> db.create_all(app=create_app())
+   $ On Terminal-> python
+   $ > from url_shorten import create_app
+   >from url_shorten.extensions import db
+   >from url_shorten.models import Url
+   > db.create_all(app=create_app())
 
 7. To check if tables are created 
-$ > sqlite3 url_shorten/db.sqlite3
-$ > .tables
+   $ > sqlite3 url_shorten/db.sqlite3
+   $ > .tables
 
 8. To run the application from Terminal 
 > flask run
