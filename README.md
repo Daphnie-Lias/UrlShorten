@@ -11,7 +11,10 @@ $ https://github.com/Daphnie-Lias/UrlShorten.git
 3. Install virtualenv
 
 $ pip3 install virtualenv
-4.If you get a note from pip about virtualenv not being in your PATH, you need to perform this step. PATH is a variable accessible from any bash terminal you run, and it tells bash where to look for the commands you enter. It is a list of directories separated by :. You can see yours by running echo $PATH. To run virtualenv commands, you need to add python’s packages to your PATH by editing or creating the file ~/.bash_profile on MacOS. To that file add the following lines:
+4.If you get a note from pip about virtualenv not being in your PATH, you need to perform this step. 
+PATH is a variable accessible from any bash terminal you run, and it tells bash where to look for the commands you enter. 
+It is a list of directories separated by :. You can see yours by running echo $PATH. To run virtualenv commands, you need to add python’s packages to your PATH by editing or creating the file ~/.bash_profile on MacOS. 
+To that file add the following lines:
 
 PATH="<Path from pip message>:$PATH"
 export PATH
