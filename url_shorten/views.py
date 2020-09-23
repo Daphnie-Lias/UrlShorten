@@ -143,7 +143,7 @@ def shortcode_validate(shortcode):
     """
     pattern = re.compile('^\w{6}$')
     status = re.match(pattern, shortcode)
-    print(bool(status))
+
     return status
 
 @short.errorhandler(400)
