@@ -68,11 +68,11 @@ Deliverables
 ● Instructions to run unit test(s) - IN PROGRESS / INCOMPLETE
 
 
-Improvements:
+Improvements / To-Do with Additional time:
 
-1. To use an in-memory datastore like Redis, to fetch the auto-increment Id's and use a strong encryption algorithm like Base62 / MDF 5 to generate the short codes.
+1. To use an in-memory datastore like Redis, to fetch the Id's auto-incremently , hash them and use a strong encryption algorithm like Base62 / MDF 5 to generate      the short codes.
 
-2. To complete the unit tests and validation 
+2. To complete the unit tests and validation for models, db and view layer.
 
 3. To run a performance test , to able to test the application concurrently atleast to support 10 active threads.
 
