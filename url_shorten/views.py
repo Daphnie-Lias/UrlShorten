@@ -67,15 +67,15 @@ def shorten():
         else:
             ''' Short_code validation '''
             short_code_exists = db.session.query(db.exists().where(Url.short_url == code)).scalar()
-            short_code_valid = shortcode_validate(code)
+            short_code_valid = bool(shortcode_validate(code))
 
-            if not short_code_exists and short_code_valid == False:
+            if  short_code_valid == False:
                 abort(412)
 
             elif  short_code_exists :
                 abort(409)
 
-            elif not short_code_exists :
+            elif not short_code_exists and short_code_valid == True:
                 link = Url(original_url=original_url,short_url=code)
                 db.session.add(link)
                 db.session.commit()
@@ -143,6 +143,7 @@ def shortcode_validate(shortcode):
     """
     pattern = re.compile('^\w{6}$')
     status = re.match(pattern, shortcode)
+    print(bool(status))
     return status
 
 @short.errorhandler(400)
