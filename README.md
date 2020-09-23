@@ -1,32 +1,43 @@
 # UrlShorten
 Objective: Create a webservice which can shorten urls like TinyURL and bit.ly
 
-Getting Started
+**Getting Started**
 
 1. Clone this repository by running
 
 $ https://github.com/Daphnie-Lias/UrlShorten.git
 
-2. Install python from https://python.org or via your favorite package manager
-3. Install virtualenv
+2. Install python from https://python.org or via your favorite package manager (homebrew for MAC)
+   brew install python
+  
+   Verify python version: 
+   >python3 -V 
+   >Python 3.7.6
 
-$ pip3 install virtualenv
-4.If you get a note from pip about virtualenv not being in your PATH, you need to perform this step. 
-PATH is a variable accessible from any bash terminal you run, and it tells bash where to look for the commands you enter. 
-It is a list of directories separated by :. You can see yours by running echo $PATH. To run virtualenv commands, you need to add python’s packages to your PATH by editing or creating the file ~/.bash_profile on MacOS. 
-To that file add the following lines:
 
-PATH="<Path from pip message>:$PATH"
-export PATH
-5. Then you can install dependencies into a virtual environment
+2. Install Pipenv Globally
+Open Terminal in (Applications/Utilities/Terminal) and upgrade pip:
 
-$ cd flask_tests_workshop
-$ virtualenv venv
-$ source venv/bin/activate
+python3.7.6 -m pip install pip --upgrade
+Another option to upgade, is pip3 install pip --upgrade
+
+Install Pipenv:
+
+python3.7.6 -m pip install pipenv
+
+3. Create Virtual Environment with Pipenv
+Open Terminal in (Applications/Utilities/Terminal)
+
+Make directory :mkdir urlproj
+
+Activate the Virtual Environment:
+
+pipenv shell
+ 
 $ pip install -r requirements.txt
 
-DB Setup:
-6. If tables are not created on startup , use the below commands:
+4. DB Setup:
+ If tables are not created on startup , use the below commands: (one time) 
 
 $ On Terminal-> python
 $ > from url_shorten import create_app
@@ -62,5 +73,15 @@ Deliverables
 ● Instructions to run unit test(s) - IN PROGRESS / INCOMPLETE
 
 
+Improvements:
 
+1. To use an in-memory datastore like Redis, to fetch the auto-increment Id's and use a strong encryption algorithm like Base62 / MDF 5 to generate the short codes.
+
+2. To complete the unit tests and validation 
+
+3. To run a performance test , to able to test the application concurrently atleast to support 10 active threads.
+
+4. Dockerize the application for easier portability.
+
+4. Deploy the application in Heroku - with production configuration
 
