@@ -1,0 +1,29 @@
+<!-- extend from base layout -->
+    {% extends "layout.html" %}
+
+    {% block content %}
+
+        <h1>Test Shortener</h1>
+
+           <form method="POST" action="{{ url_for('short.shorten') }}">
+                <div class="field">
+                    <label class="label">Original URL</label>
+                    <div class="control">
+                        <input class="input" type="text" name="url">
+                    </div>
+
+                </div>
+                 <div class="field">
+                    <label class="label">Short Code</label>
+                    <div class="control">
+                        <input class="input" type="text" name="shortcode">
+                    </div>
+
+                </div>
+                <div class="control">
+                    <button type="submit" class="button is-info">Shorten</button>
+                </div>
+
+            </form>
+
+    {% endblock %}
